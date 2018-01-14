@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VfJ-pp-RQm">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VfJ-pp-RQm">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
     <dependencies>
         <deployment identifier="tvOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,8 +30,17 @@
                                     <action selector="ActionRSSButton:" destination="rgw-jP-vDc" eventType="primaryActionTriggered" id="Lyx-41-bv5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxy-AM-yyY">
+                                <rect key="frame" x="324" y="209" width="195" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="Lxy-AM-yyY" id="7FA-11-32B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VcF-md-gOw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,26 +56,26 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="x6V-D9-nrr">
-                                <rect key="frame" x="0.0" y="80" width="634" height="66"/>
+                                <rect key="frame" x="0.0" y="80" width="499" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6V-D9-nrr" id="l5h-MZ-NuT">
-                                    <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="439" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Flh-Co-B9V">
-                                <rect key="frame" x="0.0" y="160" width="634" height="66"/>
+                                <rect key="frame" x="0.0" y="160" width="499" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Flh-Co-B9V" id="Of2-2q-HGr">
-                                    <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="439" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="wJJ-he-f3e">
-                                <rect key="frame" x="0.0" y="240" width="634" height="66"/>
+                                <rect key="frame" x="0.0" y="240" width="499" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wJJ-he-f3e" id="XKG-J9-PhR">
-                                    <rect key="frame" x="0.0" y="0.0" width="558" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="439" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -105,7 +114,7 @@
             <objects>
                 <navigationController id="jc8-uo-wZx" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TLq-fc-A2S">
-                        <rect key="frame" x="0.0" y="0.0" width="1920" height="145"/>
+                        <rect key="frame" x="0.0" y="0.0" width="634" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -116,12 +125,13 @@
             </objects>
             <point key="canvasLocation" x="2284" y="-2155"/>
         </scene>
-        <!--Item-->
+        <!--RSS Reader-->
         <scene sceneID="zzt-SV-h9I">
             <objects>
-                <splitViewController id="f9m-bK-cC4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gv1-Wc-6lh"/>
+                <splitViewController id="f9m-bK-cC4" customClass="SplitController" customModule="mynews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="RSS Reader" id="gv1-Wc-6lh"/>
                     <connections>
+                        <outlet property="tab" destination="gv1-Wc-6lh" id="wp4-YA-Y71"/>
                         <segue destination="jc8-uo-wZx" kind="relationship" relationship="masterViewController" id="fnI-p1-cBm"/>
                         <segue destination="rgw-jP-vDc" kind="relationship" relationship="detailViewController" id="ZzD-B4-p8g"/>
                     </connections>
